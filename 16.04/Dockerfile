@@ -24,6 +24,8 @@ RUN apt-get -qqy update \
     sudo \
     unzip \
     wget \
+    vim \
+    git \
   && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
 #===================
@@ -35,5 +37,5 @@ RUN apt-get -qqy update \
 ENV TZ "Asia/Shanghai"
 RUN echo "${TZ}" > /etc/timezone \
   && dpkg-reconfigure --frontend noninteractive tzdata
-  
+
 CMD ["/bin/bash"]
